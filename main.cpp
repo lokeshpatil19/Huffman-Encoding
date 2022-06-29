@@ -4,7 +4,6 @@
 
 #define MAX_TREE_HT 100
  
-// A Huffman tree node
 struct MinHeapNode {
 
     char data;
