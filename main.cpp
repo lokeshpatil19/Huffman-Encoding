@@ -1,6 +1,6 @@
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <bits/stdc++.h>
+#include <cstdlib>
 
 #define MAX_TREE_HT 100
  
