@@ -1,41 +1,30 @@
-// C program for Huffman Coding
+
 #include <stdio.h>
 #include <stdlib.h>
- 
-// This constant can be avoided by explicitly
-// calculating height of Huffman Tree
+
 #define MAX_TREE_HT 100
  
 // A Huffman tree node
 struct MinHeapNode {
- 
-    // One of the input characters
+
     char data;
  
-    // Frequency of the character
+
     unsigned freq;
  
-    // Left and right child of this node
+
     struct MinHeapNode *left, *right;
 };
  
-// A Min Heap:  Collection of
-// min-heap (or Huffman tree) nodes
+
 struct MinHeap {
  
-    // Current size of min heap
+
     unsigned size;
- 
-    // capacity of min heap
     unsigned capacity;
- 
-    // Array of minheap node pointers
     struct MinHeapNode** array;
 };
- 
-// A utility function allocate a new
-// min heap node with given character
-// and frequency of the character
+
 struct MinHeapNode* newNode(char data, unsigned freq)
 {
     struct MinHeapNode* temp = (struct MinHeapNode*)malloc(
@@ -47,9 +36,7 @@ struct MinHeapNode* newNode(char data, unsigned freq)
  
     return temp;
 }
- 
-// A utility function to create
-// a min heap of given capacity
+
 struct MinHeap* createMinHeap(unsigned capacity)
  
 {
@@ -57,7 +44,7 @@ struct MinHeap* createMinHeap(unsigned capacity)
     struct MinHeap* minHeap
         = (struct MinHeap*)malloc(sizeof(struct MinHeap));
  
-    // current size is 0
+
     minHeap->size = 0;
  
     minHeap->capacity = capacity;
@@ -66,9 +53,7 @@ struct MinHeap* createMinHeap(unsigned capacity)
         minHeap->capacity * sizeof(struct MinHeapNode*));
     return minHeap;
 }
- 
-// A utility function to
-// swap two min heap nodes
+
 void swapMinHeapNode(struct MinHeapNode** a,
                      struct MinHeapNode** b)
  
@@ -79,7 +64,6 @@ void swapMinHeapNode(struct MinHeapNode** a,
     *b = t;
 }
  
-// The standard minHeapify function.
 void minHeapify(struct MinHeap* minHeap, int idx)
  
 {
@@ -105,8 +89,7 @@ void minHeapify(struct MinHeap* minHeap, int idx)
     }
 }
  
-// A utility function to check
-// if size of heap is 1 or not
+
 int isSizeOne(struct MinHeap* minHeap)
 {
  
