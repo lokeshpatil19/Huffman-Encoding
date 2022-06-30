@@ -1,9 +1,19 @@
+// Name: Lokesh Patil
+// Project: Huffmann Enoding
 
 #include <bits/stdc++.h>
 #include <cstdlib>
 
 #define MAX_TREE_HT 100
+
+struct MinHeap {
  
+
+    unsigned size;
+    unsigned capacity;
+    struct MinHeapNode** array;
+};
+
 struct MinHeapNode {
 
     char data;
@@ -13,15 +23,6 @@ struct MinHeapNode {
  
 
     struct MinHeapNode *left, *right;
-};
- 
-
-struct MinHeap {
- 
-
-    unsigned size;
-    unsigned capacity;
-    struct MinHeapNode** array;
 };
 
 struct MinHeapNode* newNode(char data, unsigned freq)
